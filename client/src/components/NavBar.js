@@ -17,11 +17,11 @@ function NavBar({ user, setUser }) {
       <div>
         <Link to="/">Nelp!</Link>
       </div>
-      <nav>
+      <div>
         <button variant="outline" onClick={handleLogoutClick}>
           Logout
         </button>
-      </nav>
+      </div>
     </div>
   );
 }
