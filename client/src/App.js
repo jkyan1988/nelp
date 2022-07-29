@@ -1,6 +1,8 @@
+
+
 import React, { useEffect, useState } from "react";
-import NavBar from "/components/NavBar";
-import Login from "/pages/Login";
+import NavBar from "./components/NavBar";
+import Login from "./pages/Login";
 
 
 function App() {
@@ -26,3 +28,5 @@ function App() {
 }
 
 export default App;
+
+

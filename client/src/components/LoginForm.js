@@ -1,5 +1,6 @@
+
 import React, { useState } from "react";
-import { Error, Button } from "../styles";
+
 
 
 function LoginForm({ onLogin }) {
@@ -50,15 +51,15 @@ function LoginForm({ onLogin }) {
         />
       </div>
       <div>
-        <Button variant="fill" color="primary" type="submit">
+        <button variant="fill" color="primary" type="submit">
           {isLoading ? "Loading..." : "Login"}
-        </Button>
+        </button>
       </div>
-      <div>
+      {/* <div>
         {errors.map((err) => (
           <Error key={err}>{err}</Error>
         ))}
-      </div>
+      </div> */}
     </form>
   );
 }
