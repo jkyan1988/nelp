@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.3.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^5.3.3"
   }
 }
