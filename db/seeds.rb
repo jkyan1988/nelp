@@ -8,7 +8,7 @@
 
 puts "🌱 Seeding Restaurants..."
 
-array = [
+restaurants = [
     {
         name: "Eleven Madison Park",
         location: "11 Madison Ave., New York, 10010, USA",
@@ -969,3 +969,7 @@ array = [
         image_url: "https://axwwgrkdco.cloudimg.io/v7/__gmpics__/4cff132fb3e947b49f7a0ce706dbbc20?width=1000"
             }
         ]
+
+restaurants.each do |o| 
+            Restaurant.create(name: o[:name], location: o[:location], cuisine: o[:cuisine], website: o[:website], image_url: o[:image_url])
+    end
