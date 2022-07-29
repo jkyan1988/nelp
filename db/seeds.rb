@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Restaurant.destroy_all
+User.destroy_all
+Review.destroy_all
+
 puts "seeding restaurants...."
 10.times do
     Restaurant.create(name: Faker::Restaurant.name, location: Faker::Address.city, cuisine: Faker::Restaurant.type, image: "https://www.webindia123.com/cookery/region/bihar/images/intro.jpg")
