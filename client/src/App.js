@@ -2,7 +2,7 @@
 
 import React from "react";
 import NavBar from "./components/NavBar";
-
+import HomePage from "./components/HomePage";
 
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
     <>
 
       <NavBar/>
+      <HomePage/>
     {/* if (!user) return <Login onLogin={setUser} />;   */}
     </>
   );
