@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(version: 2022_07_28_232327) do
     t.string "name"
     t.string "location"
     t.string "cuisine"
-    t.string "image"
+    t.string "image_url"
+    t.string "website"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

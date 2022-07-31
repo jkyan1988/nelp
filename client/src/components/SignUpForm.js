@@ -1,18 +1,5 @@
 import React, { useState } from "react";
 
-const inputStyles = {
-  padding: "10px",
-  border: "3px solid #9198e5",
-  boxShadow: "0px 0px 0px",
-  color: "#3a46c2;",
-  font_size: "18px",
-  background_color: "#9198e5",
-  outline: "10px",
-  borderRadius: "10px",
-  width: "10%",
-  margin: "10px 0",
-
-};
 
 function SignUpForm({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -54,7 +41,6 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="username">Username</label>
         <input
-          style ={inputStyles}
           type="text"
           id="username"
           autoComplete="off"
@@ -65,7 +51,6 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="password">Password</label>
         <input
-        style ={inputStyles}
           type="password"
           id="password"
           value={password}
@@ -76,7 +61,6 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="password">Password Confirmation</label>
         <input
-        style ={inputStyles}
           type="password"
           id="password_confirmation"
           value={passwordConfirmation}
@@ -87,7 +71,6 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="imageUrl">Profile Image</label>
         <input
-        style ={inputStyles}
           type="text"
           id="imageUrl"
           value={imageUrl}
@@ -97,7 +80,6 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="bio">Bio</label>
         <textarea
-        style ={inputStyles}
           rows="3"
           id="bio"
           value={bio}
