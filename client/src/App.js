@@ -1,6 +1,4 @@
-
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
 
@@ -18,12 +16,19 @@ function App() {
   // }, []);
 
   // if (!user) return <Login onLogin={setUser} />;
+  const [restaurants, setRestaurants] = useState([])
+
+  useEffect(() => {
+      fetch("/restaurants")
+        .then((response) => response.json())
+        .then((data) => setRestaurants(data))
+      }, [])
 
   return (
     <>
 
       <NavBar/>
-      <HomePage/>
+      <HomePage restaurants={restaurants} setRestaurants={setRestaurants}/>
     {/* if (!user) return <Login onLogin={setUser} />;   */}
     </>
   );
