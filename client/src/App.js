@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
 import { Switch, Route } from "react-router-dom";
 import RestaurantPage from './components/RestaurantPage'
+import Login from './pages/Login';
 
 
 
@@ -11,7 +12,31 @@ function App() {
   const [select, setSelect] = useState([])
   const [search, setSearch] = useState("")
   const [restaurants, setRestaurants] = useState([])
+  const [user, setUser] = useState(null);
+  
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+  // if (!user) return <Login onLogin={setUser} />;
+  
+  useEffect(() => {
+      fetch("/restaurants")
+        .then((response) => response.json())
+        .then((restaurants) => setRestaurants(restaurants))
+      }, [])
 
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
+  }
   function renderRestaurant(clickedRestaurant){
     return setSelect(clickedRestaurant)
     
@@ -20,11 +45,6 @@ function App() {
   function handleSearch(e){
     setSearch(e.target.value)
 }
-  useEffect(() => {
-      fetch("/restaurants")
-        .then((response) => response.json())
-        .then((restaurants) => setRestaurants(restaurants))
-      }, [])
 
   const allRestaurants = restaurants.filter((restaurant) => {
         return restaurant.name.toLowerCase().includes(search.toLowerCase());
@@ -34,7 +54,7 @@ function App() {
     <>
       <div>
         <div class="card">
-      <NavBar handleSearch={handleSearch} search={search}/>
+      <NavBar user={user} handleLogoutClick={handleLogoutClick}/>
         </div>
        <Switch>
           <Route exact path="/">
