@@ -11,7 +11,7 @@ function NavBar( { handleLogoutClick, user } ) {
     
     <div>
      
-      <div class="username"><button>{user.username}</button></div>
+      {/* <div class="username"><button>{user.username}</button></div> */}
       
       <div>
         <button variant="outline" onClick={handleLogoutClick}>
