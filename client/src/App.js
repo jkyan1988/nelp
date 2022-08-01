@@ -1,34 +1,78 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import HomePage from "./components/HomePage";
+import { Switch, Route } from "react-router-dom";
+import RestaurantPage from './components/RestaurantPage'
+import Login from './pages/Login';
+
 
 
 function App() {
-  // const [user, setUser] = useState(null);
-  
-  // useEffect(() => {
-  //   // auto-login
-  //   fetch("/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
 
-  // if (!user) return <Login onLogin={setUser} />;
+  const [select, setSelect] = useState([])
+  const [search, setSearch] = useState("")
   const [restaurants, setRestaurants] = useState([])
-
+  const [user, setUser] = useState(null);
+  
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+  // if (!user) return <Login onLogin={setUser} />;
+  
   useEffect(() => {
       fetch("/restaurants")
         .then((response) => response.json())
-        .then((data) => setRestaurants(data))
+        .then((restaurants) => setRestaurants(restaurants))
       }, [])
 
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
+  }
+  function renderRestaurant(clickedRestaurant){
+    return setSelect(clickedRestaurant)
+    
+}
+
+  function handleSearch(e){
+    setSearch(e.target.value)
+}
+
+  const allRestaurants = restaurants.filter((restaurant) => {
+        return restaurant.name.toLowerCase().includes(search.toLowerCase());
+      });
+     
   return (
     <>
-
-      <NavBar/>
-      <HomePage restaurants={restaurants} setRestaurants={setRestaurants}/>
+      <div>
+        <div class="card">
+      <NavBar user={user} handleLogoutClick={handleLogoutClick}/>
+        </div>
+       <Switch>
+          <Route exact path="/">
+            <HomePage handleSearch={handleSearch} search={search} restaurants={allRestaurants} renderRestaurant={renderRestaurant}/>
+          </Route>
+          <Route path="/restaurant">
+            <RestaurantPage restaurants={restaurants} setSelect={setSelect} select={select}/>
+        </Route>
+          
+          
+      </Switch>
+    </div>
+      {/* <NavBar/> */}
+      {/* <div class="card">
+        <NavBar />
+        
+      </div>
+      <HomePage restaurants={restaurants} setRestaurants={setRestaurants}/> */}
     {/* if (!user) return <Login onLogin={setUser} />;   */}
     </>
   );
