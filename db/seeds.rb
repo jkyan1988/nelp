@@ -971,5 +971,5 @@ restaurants = [
         ]
 
 restaurants.each do |o| 
-            Restaurant.create(name: o[:name], location: o[:location], cuisine: o[:cuisine], website: o[:website], image_url: o[:image_url])
-    end
+    Restaurant.create(name: o[:name], location: o[:location], cuisine: o[:cuisine], website: o[:website], image_url: o[:image_url])
+end
