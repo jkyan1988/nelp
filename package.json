@@ -9,5 +9,12 @@
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.3.0"
+  },
+  "dependencies": {
+    "flickity": "^3.0.0",
+    "react-router-dom": "^5.3.3"
   }
 }
