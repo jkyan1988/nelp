@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :reviews, only: [:index, :create]
+  resources :reviews
   resources :restaurants, only: :index
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
