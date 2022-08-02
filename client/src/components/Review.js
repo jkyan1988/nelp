@@ -4,7 +4,7 @@ import { AiOutlineForm, AiOutlineStar } from "react-icons/ai";
 
 function Review() {
   function handleSubmit(e) {
-    e.preventDefault;
+    console.log(e)
   }
   return (
     <div>
