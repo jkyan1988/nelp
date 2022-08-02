@@ -8,22 +8,20 @@ import UserProfile from './components/UserProfile'
 
 
 
-function App() {
 
+function App() {
+  
   const [select, setSelect] = useState([])
   const [search, setSearch] = useState("")
   const [restaurants, setRestaurants] = useState([])
   const [user, setUser] = useState(null);
-  const [reviews, setReviews] = useState([])
+
+
+  
+
   
   useEffect(() => {
-      fetch('/reviews')
-        .then((response) => response.json())
-        .then((reviews) => setReviews(reviews))
-  })
-
-  useEffect(() => {
-      fetch("/restaurants")
+    fetch("/restaurants")
         .then((response) => response.json())
         .then((restaurants) => setRestaurants(restaurants))
       }, [])
@@ -87,7 +85,7 @@ function App() {
             restaurants={restaurants} 
             setSelect={setSelect} 
             select={select}
-            reviews={reviews}
+           
             />
           </Route>
           <Route path="/login">
@@ -96,7 +94,7 @@ function App() {
           <Route path="/me">
             <UserProfile 
             user={user} 
-            reviews={reviews}
+         
             />
           </Route>
           
