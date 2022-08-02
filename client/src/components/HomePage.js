@@ -3,40 +3,27 @@ import { Link } from "react-router-dom";
 import Row from "./Row"
 import {NavLink} from 'react-router-dom'
 import RestaurantContainer from "./RestaurantContainer"
+import Login from '../pages/Login';
+import NavBar from './NavBar';
 
-function HomePage( { restaurants, setRestaurants, search, handleSearch, renderRestaurant } ){
 
+function HomePage( { restaurants, 
+                  setRestaurants, 
+                  search, 
+                  handleSearch, 
+                  renderRestaurant,
+                  setUser,
+                  handleLogoutClick,
+                  user
+                  } ){
 
-
-    const image_restaurant = restaurants.filter(restaurant => restaurant.cuisine.includes("Creative"))
-
-    function handleSearchRestaurants(e) {
-
-    }
-
-    
     return (
         <>
-         
-
-      <div className="main">
-      <nav>
-          <NavLink exact to="/">
-          <img class="logo" src="https://i.postimg.cc/9MhBQy0v/nelp-logo.jpg"/>
-          </NavLink>
-        </nav>
-      <div className="search">
-        <form>
-        <input class="rest-form" type="search" value={search} placeholder="Restauraunts" onChange={handleSearch}/><button type="submit" class="btn-search">🔍</button>
-        </form>
-      </div>
+       
         <div className="App">
             <RestaurantContainer restaurants={restaurants} renderRestaurant={renderRestaurant}/>
         </div>
-    </div>
-      
-
-    </>
+        </>
     )
     
 }

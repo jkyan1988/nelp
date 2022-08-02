@@ -976,11 +976,11 @@ restaurants.each do |o|
             Restaurant.create(name: o[:name], location: o[:location], cuisine: o[:cuisine], website: o[:website], image_url: o[:image_url])
     end
 puts "seeding users...."
-10.times do
+10.times do 
     User.create(username: Faker::Name.first_name, image_url: "https://www.webindia123.com/cookery/region/bihar/images/intro.jpg", bio: Faker::Restaurant.description)
 end
 puts "seeding reviews...."
-10.times do
-    Review.create(comment: Faker::Restaurant.review, rating: rand(5), restaurant_id: Restaurant.all.ids.sample, user_id: User.all.ids.sample)
+10.times do 
+    Review.create(comment: Faker::Restaurant.review, rating: rand(5), user_id: User.all.ids.sample, restaurant_id: Restaurant.all.ids.sample)
 end
 puts "seeding done!!!!"

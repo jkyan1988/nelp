@@ -8,8 +8,7 @@ function Login({ onLogin }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
-    <div>
-      <span>NELP!</span>
+    <div class="center">
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />
