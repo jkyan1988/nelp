@@ -980,7 +980,7 @@ restaurants = [
             User.create!(username: Faker::Name.first_name, password: "1234", image_url: "https://www.webindia123.com/cookery/region/bihar/images/intro.jpg", bio: Faker::Restaurant.description)
         end
         puts "seeding reviews...."
-        10.times do 
+        1000.times do 
             Review.create!(comment: Faker::Restaurant.review, rating: rand(5), user_id: User.all.ids.sample, restaurant_id: Restaurant.all.ids.sample)
         end
         
