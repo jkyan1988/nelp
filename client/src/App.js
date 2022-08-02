@@ -14,7 +14,14 @@ function App() {
   const [search, setSearch] = useState("")
   const [restaurants, setRestaurants] = useState([])
   const [user, setUser] = useState(null);
+  const [reviews, setReviews] = useState([])
   
+  useEffect(() => {
+      fetch('/reviews')
+        .then((response) => response.json())
+        .then((reviews) => setReviews(reviews))
+  })
+
   useEffect(() => {
       fetch("/restaurants")
         .then((response) => response.json())
@@ -79,15 +86,20 @@ function App() {
             <RestaurantPage 
             restaurants={restaurants} 
             setSelect={setSelect} 
-            select={select}/>
+            select={select}
+            reviews={reviews}
+            />
           </Route>
           <Route path="/login">
           <Login onLogin={setUser}/>
           </Route>
           <Route path="/me">
-            <UserProfile user={user}/>
+            <UserProfile 
+            user={user} 
+            reviews={reviews}
+            />
           </Route>
-          <Route path=
+          
 
         
           
