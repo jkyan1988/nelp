@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-
+    skip_before_action :authorize, only: [:index, :show]
     before_action :find_restaurant, only: :show
 
     def index

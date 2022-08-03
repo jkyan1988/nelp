@@ -1,8 +1,9 @@
 import React from "react";
 import {NavLink} from 'react-router-dom'
+import styled from "styled-components";
 
 
-function NavBar( { search, handleSearch, user } ) {
+function NavBar( { search, handleSearch, user, handleLogoutClick } ) {
 
   return (
     
@@ -24,6 +25,11 @@ function NavBar( { search, handleSearch, user } ) {
         </NavLink>
         <NavLink exact to="/me">
           <p>{user && user.username}</p>
+        </NavLink>
+        <NavLink exact to="/">
+      <button  onClick={handleLogoutClick}>
+          Logout
+        </button>
         </NavLink>
       </div>
      </div>

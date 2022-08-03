@@ -53,3 +53,4 @@ gem 'sqlite3'
 
 gem 'faker'
 gem 'bootstrap-sass'
+gem 'pry'
