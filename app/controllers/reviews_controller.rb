@@ -1,12 +1,13 @@
 class ReviewsController < ApplicationController
 
-    before_action :find_review, only: :show, :update, :destroy
+    before_action :find_review, only: [ :show, :update, :destroy]
+
     def index
         render json: Review.all
     end
     
     def create
-        review = @current_user.reviews.create!(review_params)
+        review = Review.create!(review_params)
         render json: review, status: :created
     end
 

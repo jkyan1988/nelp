@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "flickity": "^3.0.0",
+    "react-icons": "^4.4.0",
     "react-router-dom": "^5.3.3"
   }
 }
