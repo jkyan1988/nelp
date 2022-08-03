@@ -1,10 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 import { AiOutlineForm, AiOutlineStar } from "react-icons/ai";
+import { useState } from "react";
+import { FormField, Error } from "../styles";
 
-function Review() {
-  function handleSubmit(e) {
-    console.log(e)
+function Review( { restaurant, user}) {
+
+
+  const [errors, setErrors] = useState([]);
+  const [newObj, setNewObj] = useState({
+    comment: "", 
+    rating: 5,
+    user_id: user.id,
+    restaurant_id: restaurant.id,
+  })
+  function handleChange(e){
+    setNewObj({...newObj, [e.target.name]: e.target.value})
+  }
+  
+  function handleSubmit(e)  {
+    e.preventDefault();
+    fetch("/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(
+        newObj
+       
+      ),
+    })
   }
   return (
     <div>
@@ -17,15 +42,20 @@ function Review() {
       <ReviewDiv>
         <h3>
           <AiOutlineStar />
-          Rating:
+          Rating: {restaurant.rating}
         </h3>
       </ReviewDiv>
       <Commentform onSubmit={handleSubmit}>
         <label>
-          <CommentBox type="text" name="comment" placeholder="comment" />
+          <CommentBox type="text" name="comment" placeholder="comment" onChange={handleChange}/>
         </label>
-        <SubmitReview type="submit">Submit</SubmitReview>
+        <SubmitReview type="submit">Submit Review</SubmitReview>
       </Commentform>
+      <FormField>
+            {errors.map((err) => (
+              <Error key={err}>{err}</Error>
+            ))}
+          </FormField>
     </div>
   );
 }

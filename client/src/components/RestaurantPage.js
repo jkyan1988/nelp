@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Review from './Review';
 
-function RestaurantPage( { select } ) {
+function RestaurantPage( { select, user } ) {
     const [restaurant, setRestaurant] = useState([])
     // const { id } = useParams();
     
@@ -18,10 +18,12 @@ return(
         <img src={restaurant.image_url}/>
         {restaurant.reviews && restaurant.reviews.map ((review)=> {
             return(
-                <div>{review.comment}</div>
+                <ul>
+                    <li>{review.comment}</li>
+                </ul>
             )
         })}
-        <Review/>
+        <Review restaurant={restaurant} user={user}/>
     </div>
 )
 //REVIEW COMPONENT WILL GO HERE

@@ -1,13 +1,14 @@
 class ReviewsController < ApplicationController
-
+    skip_before_action :authorize, only: [:index, :show ]
     before_action :find_review, only: [ :show, :update, :destroy]
-
+ 
     def index
         render json: Review.all
     end
     
+    
     def create
-        review = Review.create!(review_params)
+        review = @current_user.reviews.create!(review_params)
         render json: review, status: :created
     end
 
@@ -16,19 +17,19 @@ class ReviewsController < ApplicationController
     end
 
     def update
-        @review.update!(review_params)
+        @current_user.reviews.update!(review_params)
         render json: @review, status: :accepted
     end
 
     def destroy
-        @review.destroy
+        @current_user.reviews.destroy
         head :no_content
     end
     
     private
     
     def review_params
-        params.permit(:comment, :rating)
+        params.permit(:comment, :rating, :user_id, :restaurant_id)
     end
 
     def find_review

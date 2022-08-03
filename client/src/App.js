@@ -24,7 +24,8 @@ function App() {
     fetch("/restaurants")
         .then((response) => response.json())
         .then((restaurants) => setRestaurants(restaurants))
-      }, [])
+      }, []);
+
   useEffect(() => {
     // auto-login
     fetch("/me").then((r) => {
@@ -85,7 +86,7 @@ function App() {
             restaurants={restaurants} 
             setSelect={setSelect} 
             select={select}
-           
+            user={user}
             />
           </Route>
           <Route path="/login">
@@ -94,8 +95,11 @@ function App() {
           <Route path="/me">
             <UserProfile 
             user={user} 
-         
+
             />
+          </Route>
+          <Route path="/logout">
+            Logout
           </Route>
           
 
