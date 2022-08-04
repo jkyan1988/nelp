@@ -17,12 +17,12 @@ class ReviewsController < ApplicationController
     end
 
     def update
-        @current_user.reviews.update!(review_params)
+        @current_user.reviews.update(review_params)
         render json: @review, status: :accepted
     end
 
     def destroy
-        @current_user.reviews.destroy
+        @current_user.reviews.destroy(find_review)
         head :no_content
     end
     
