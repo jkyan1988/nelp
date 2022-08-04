@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
     end
 
     def update
-        @current_user.reviews.update(review_params)
+        @review.update(review_params)
         render json: @review, status: :accepted
     end
 
