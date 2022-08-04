@@ -1,20 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineForm, AiOutlineStar } from "react-icons/ai";
-import { useState } from "react";
-import { FormField, Error } from "../styles";
+import { AiOutlineForm } from "react-icons/ai";
 
-function Review({
-  restaurant,
-  user,
-  select,
-  onHandleSubmit,
-  setNewObj,
-  newObj,
-}) {
-  const [errors, setErrors] = useState([]);
+function UpdateReview({ setUpdatedReview, updatedReview, onUpdateForm }) {
   function handleChange(e) {
-    setNewObj({ ...newObj, [e.target.name]: e.target.value });
+    setUpdatedReview({ ...updatedReview, [e.target.name]: e.target.value });
   }
 
   return (
@@ -22,11 +12,11 @@ function Review({
       <ReviewDiv>
         <h2>
           <AiOutlineForm />
-          Leave a Review
+          Update a Review
         </h2>
       </ReviewDiv>
       <ReviewDiv></ReviewDiv>
-      <Commentform onSubmit={onHandleSubmit}>
+      <Commentform onSubmit={onUpdateForm}>
         <label>
           <CommentBox
             type="text"
@@ -37,16 +27,11 @@ function Review({
         </label>
         <SubmitReview type="submit">Submit Review</SubmitReview>
       </Commentform>
-      <FormField>
-        {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
-      </FormField>
     </div>
   );
 }
 
-export default Review;
+export default UpdateReview;
 
 const ReviewDiv = styled.div`
   display: flex;
