@@ -5,10 +5,10 @@ function RestaurantCard( { restaurant, renderRestaurant}) {
 
 return(
     <NavLink to='/restaurant'>
-        <div onClick={()=>renderRestaurant(restaurant)}>
-                <p>{restaurant.name}</p>
-                <p>{restaurant.cuisine}</p>
-                <img src={restaurant.image_url}/>
+        <div className="div-rest" onClick={()=>renderRestaurant(restaurant)}>
+                <p className='restname'>{restaurant.name}</p>
+                <p className='restname2'>{restaurant.cuisine}</p>
+                <img className="image" src={restaurant.image_url}/>
         </div>
     </NavLink>
 )}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Error, FormField } from "../styles";
+import { GoArrowRight } from "react-icons/go";
 
 
 function SignUpForm({ onLogin }) {
@@ -43,6 +44,7 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="username">Username</label>
         <input
+          className="form-input"
           type="text"
           id="username"
           autoComplete="off"
@@ -53,6 +55,7 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="password">Password</label>
         <input
+        className="form-input"
           type="password"
           id="password"
           value={password}
@@ -63,6 +66,7 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="password">Password Confirmation</label>
         <input
+        className="form-input"
           type="password"
           id="password_confirmation"
           value={passwordConfirmation}
@@ -73,6 +77,7 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="imageUrl">Profile Image</label>
         <input
+        className="form-input"
           type="text"
           id="imageUrl"
           value={imageUrl}
@@ -89,7 +94,7 @@ function SignUpForm({ onLogin }) {
         />
       </div>
       <div>
-        <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+        <button class="logbuttons" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
       </div>
       <FormField>
         {errors.map((err) => (

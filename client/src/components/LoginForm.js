@@ -28,10 +28,11 @@ function LoginForm({ onLogin }) {
 
   return (
     <div class="form-popup" id="myForm">
-    <form class="form-container" onSubmit={handleSubmit}>
+    <form class="form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username</label>
         <input
+        className="form-input"
           type="text"
           id="username"
           autoComplete="off"
@@ -42,6 +43,7 @@ function LoginForm({ onLogin }) {
       <div>
         <label htmlFor="password">Password</label>
         <input
+        className="form-input"
           type="password"
           id="password"
           autoComplete="current-password"
@@ -50,7 +52,7 @@ function LoginForm({ onLogin }) {
         />
       </div>
       <div>
-        <button variant="fill" color="primary" type="submit">
+        <button class="logbuttons" variant="fill" color="primary" type="submit">
           {isLoading ? "Loading..." : "Login"}
         </button>
       </div>
