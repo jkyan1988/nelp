@@ -42,7 +42,7 @@ function RestaurantPage({ select, user }) {
     }).then(() => {
       fetch(`/restaurants/${select.id}`)
         .then((response) => response.json())
-        .then(setRestaurant);
+        .then(setRestaurant)
     });
   }
 
@@ -78,14 +78,16 @@ function RestaurantPage({ select, user }) {
     });
   }
   return (
-    <div>
-      <div>{restaurant.name}</div>
-      <div>{restaurant.cuisine}</div>
-      <img src={restaurant.image_url} />
+    <div class="rest-page">
+      <h1><strong>{restaurant.name}</strong></h1>
+      <h2>{restaurant.cuisine}</h2>
+      <img src={restaurant.image_url} />                                                                                                                                                            
+      <h1>Reviews</h1>
       {restaurant.reviews &&
         restaurant.reviews.map((review) => {
           return (
-            <ul>
+            <div>
+            <ul> 
               <li>
                 {review.comment}
                 <RemoveDefaultButton
@@ -100,6 +102,7 @@ function RestaurantPage({ select, user }) {
                 </RemoveDefaultButton>
               </li>
             </ul>
+            </div>
           );
         })}
       {showForm ? (

@@ -20,7 +20,7 @@ function Review({
   return (
     <div>
       <ReviewDiv>
-        <h2>
+        <h2 class="leavereview">
           <AiOutlineForm />
           Leave a Review
         </h2>

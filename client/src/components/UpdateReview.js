@@ -10,7 +10,7 @@ function UpdateReview({ setUpdatedReview, updatedReview, onUpdateForm }) {
   return (
     <div>
       <ReviewDiv>
-        <h2>
+        <h2 class="leavereview">
           <AiOutlineForm />
           Update a Review
         </h2>
