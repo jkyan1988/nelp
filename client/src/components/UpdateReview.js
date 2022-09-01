@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { AiOutlineForm } from "react-icons/ai";
 
 function UpdateReview({ setUpdatedReview, updatedReview, onUpdateForm }) {
+  
   function handleChange(e) {
     setUpdatedReview({ ...updatedReview, [e.target.name]: e.target.value });
   }

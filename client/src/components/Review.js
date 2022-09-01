@@ -4,15 +4,10 @@ import { AiOutlineForm, AiOutlineStar } from "react-icons/ai";
 import { useState } from "react";
 import { FormField, Error } from "../styles";
 
-function Review({
-  restaurant,
-  user,
-  select,
-  onHandleSubmit,
-  setNewObj,
-  newObj,
-}) {
+function Review({ onHandleSubmit, setNewObj, newObj }) {
+
   const [errors, setErrors] = useState([]);
+
   function handleChange(e) {
     setNewObj({ ...newObj, [e.target.name]: e.target.value });
   }
@@ -22,27 +17,27 @@ function Review({
       <ReviewDiv>
         <h2 class="leavereview">
           <AiOutlineForm />
-          Leave a Review
-        </h2>
-      </ReviewDiv>
-      <ReviewDiv></ReviewDiv>
-      <Commentform onSubmit={onHandleSubmit}>
-        <label>
-          <CommentBox
-            type="text"
-            name="comment"
-            placeholder="comment"
-            onChange={handleChange}
-          />
-        </label>
-        <SubmitReview type="submit">Submit Review</SubmitReview>
-      </Commentform>
-      <FormField>
-        {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
-      </FormField>
-    </div>
+            Leave a Review
+              </h2>
+                </ReviewDiv>
+                  
+                      <Commentform onSubmit={onHandleSubmit}>
+                        <label>
+                          <CommentBox
+                            type="text"
+                            name="comment"
+                            placeholder="comment"
+                            onChange={handleChange}
+                          />
+                        </label>
+                      <SubmitReview type="submit">Submit Review</SubmitReview>
+                      </Commentform>
+                    <FormField>
+                  {errors.map((err) => (
+                <Error key={err}>{err}</Error>
+              ))}
+            </FormField>
+          </div>
   );
 }
 

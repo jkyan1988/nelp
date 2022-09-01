@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { Error, FormField } from "../styles";
-import { GoArrowRight } from "react-icons/go";
-
 
 function SignUpForm({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -33,7 +30,7 @@ function SignUpForm({ onLogin }) {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => alert(err.errors));
       }
     });
   }
@@ -96,11 +93,7 @@ function SignUpForm({ onLogin }) {
       <div>
         <button class="logbuttons" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
       </div>
-      <FormField>
-        {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
-      </FormField>
+     
     </form>
   );
 }

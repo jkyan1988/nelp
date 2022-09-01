@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+.navbar-container {
+    background-color: rgb(206, 62, 62);
+    width: 100%;
+    top: 0;
+    overflow: scroll;
+
+}
+
+.logo-container {
+    width: 35%;
+    height: auto;
+    margin: auto;
+    text-align: center;
+}
+
+.logo {
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 85px;
+    color:antiquewhite;
+    font-family: 'Michroma', sans-serif;
+}
+
+.search-container {
+    width: 35%;
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.search-box {
+    border-radius: 10px;
+    width: 500px;
+    height: 25px;
+    border: none;
+    background-color: antiquewhite;
+}
+
+.yelp-submit {
+    margin-left: 5px;
+    height: 28px;
+    border: none;
+    background-color: rgb(206, 62, 62);
+    color:antiquewhite;
+}
+.loginfo-container{
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 45px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color:antiquewhite;
+    margin-top: 10px;
+}
+
+.welcome-user {
+    text-decoration: none;
+    color:antiquewhite;
+    margin-right: 15px;
+}
+
+.logoutbtn {
+    color:antiquewhite;
+    font-size: 18px;
+    margin: 0 auto;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+
+

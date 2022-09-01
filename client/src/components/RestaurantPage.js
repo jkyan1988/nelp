@@ -4,6 +4,7 @@ import UpdateReview from "./UpdateReview";
 import styled from "styled-components";
 import { HiOutlineTrash } from "react-icons/hi";
 import { AiFillEdit } from "react-icons/ai";
+import './RestaurantPage.css'
 
 function RestaurantPage({ select, user }) {
   const [restaurant, setRestaurant] = useState([]);
@@ -81,13 +82,13 @@ function RestaurantPage({ select, user }) {
     <div class="rest-page">
       <h1><strong>{restaurant.name}</strong></h1>
       <h2>{restaurant.cuisine}</h2>
-      <img src={restaurant.image_url} />                                                                                                                                                            
+      <img className='rest-image' src={restaurant.image_url} />                                                                                                                                                            
       <h1>Reviews</h1>
       {restaurant.reviews &&
         restaurant.reviews.map((review) => {
           return (
             <div>
-            <ul> 
+            <ul className='review-container'> 
               <li>
                 {review.comment}
                 <RemoveDefaultButton
@@ -107,23 +108,18 @@ function RestaurantPage({ select, user }) {
         })}
       {showForm ? (
         <UpdateReview
-          selectedReview={selectedReview}
           setUpdatedReview={setUpdatedReview}
           updatedReview={updatedReview}
           onUpdateForm={onUpdateForm}
         />
       ) : null}
-      <Review
-        restaurant={restaurant}
-        user={user}
-        select={select}
-        onHandleSubmit={handleSubmit}
-        setNewObj={setNewObj}
-        newObj={newObj}
+      <Review onHandleSubmit={handleSubmit}
+              setNewObj={setNewObj}
+              newObj={newObj}
       />
     </div>
   );
-  //REVIEW COMPONENT WILL GO HERE
+
 }
 
 export default RestaurantPage;

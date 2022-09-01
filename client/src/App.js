@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import RestaurantPage from './components/RestaurantPage'
 import Login from './pages/Login';
 import UserProfile from './components/UserProfile'
+import './App.css'
 
 
 
@@ -16,10 +17,6 @@ function App() {
   const [restaurants, setRestaurants] = useState([])
   const [user, setUser] = useState(null);
 
-
-  
-
-  
   useEffect(() => {
     fetch("/restaurants")
         .then((response) => response.json())
@@ -34,7 +31,7 @@ function App() {
       }
     });
   }, []);
-  // if (!user) return <Login onLogin={setUser} />;
+  if (!user) return <Login onLogin={setUser} />;
 
   function handleLogoutClick() {
     fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -56,71 +53,37 @@ function App() {
     return restaurant.name.toLowerCase().includes(search.toLowerCase());
   });
   
-  // if (!user) return <Login onLogin={setUser} />;
   return (
-    <>
       <div>
-       
-      <NavBar user={user} 
-      handleLogoutClick={handleLogoutClick}
-      search={search}
-      handleSearch={handleSearch}
-      setUser={setUser}
-      />
+        <NavBar user={user} 
+                handleLogoutClick={handleLogoutClick}
+                search={search}
+                handleSearch={handleSearch}
+        />
       
        
        <Switch>
           <Route exact path="/">
-            <HomePage 
-            handleSearch={handleSearch} 
-            search={search} 
-            restaurants={allRestaurants} 
-            renderRestaurant={renderRestaurant}
-            setUser={setUser}
-            handleLogoutClick={handleLogoutClick}
-            user={user}
+            <HomePage restaurants={allRestaurants} 
+                      renderRestaurant={renderRestaurant}
             />
           </Route>
           <Route path="/restaurant">
-            <RestaurantPage 
-            restaurants={restaurants} 
-            setSelect={setSelect} 
-            select={select}
-            user={user}
+            <RestaurantPage select={select}
+                            user={user}
             />
           </Route>
           <Route path="/login">
-          <Login onLogin={setUser}/>
+            <Login onLogin={setUser}/>
           </Route>
           <Route path="/me">
-            <UserProfile 
-            user={user} 
-
-            />
+            <UserProfile user={user}/>
           </Route>
           <Route path="/logout">
             Logout
-          </Route>
-          
-
-        
-          
+          </Route>  
       </Switch>
     </div>
-   
-     
-    {/* <div class="username"><button>{user.username}</button></div> */}
-      
-     
-   
-      {/* <NavBar/> */}
-      {/* <div class="card">
-        <NavBar />
-        
-      </div>
-      <HomePage restaurants={restaurants} setRestaurants={setRestaurants}/> */}
-    {/* if (!user) return <Login onLogin={setUser} />;   */}
-    </>
   );
 }
 
