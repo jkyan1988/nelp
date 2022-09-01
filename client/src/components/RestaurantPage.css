@@ -1,0 +1,18 @@
+.rest-page{
+    font-family: helvitica neue;
+      text-align: center;
+      display: block;
+      font-weight: bold;
+      height: 500px;
+      width: auto;
+      color: rgb(206, 62, 62);
+  }
+
+  .rest-image {
+        height: 500px;
+        width: auto;
+  }
+
+  .review-container {
+    width: 70%;
+  }

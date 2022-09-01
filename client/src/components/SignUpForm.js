@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-
 function SignUpForm({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,16 +30,18 @@ function SignUpForm({ onLogin }) {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => alert(err.errors));
       }
     });
   }
 
   return (
+    
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username</label>
         <input
+          className="form-input"
           type="text"
           id="username"
           autoComplete="off"
@@ -51,6 +52,7 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="password">Password</label>
         <input
+        className="form-input"
           type="password"
           id="password"
           value={password}
@@ -61,6 +63,7 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="password">Password Confirmation</label>
         <input
+        className="form-input"
           type="password"
           id="password_confirmation"
           value={passwordConfirmation}
@@ -71,6 +74,7 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="imageUrl">Profile Image</label>
         <input
+        className="form-input"
           type="text"
           id="imageUrl"
           value={imageUrl}
@@ -87,13 +91,9 @@ function SignUpForm({ onLogin }) {
         />
       </div>
       <div>
-        <button type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+        <button class="logbuttons" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
       </div>
-      {/* <div>
-        {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
-      </div> */}
+     
     </form>
   );
 }

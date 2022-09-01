@@ -1,5 +1,3 @@
-
-
 import { useState } from "react";
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
@@ -10,15 +8,14 @@ function Login({ onLogin }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
-    <div>
-      <span>NELP!</span>
+    <div class="center">
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />
           
           <p>
             Don't have an account? &nbsp;
-            <button color="secondary" onClick={() => setShowLogin(false)}>
+            <button  class="logbuttons" color="secondary" onClick={() => setShowLogin(false)}>
               Sign Up
             </button>
           </p>
@@ -29,7 +26,7 @@ function Login({ onLogin }) {
          
           <p>
             Already have an account? &nbsp;
-            <button color="secondary" onClick={() => setShowLogin(true)}>
+            <button  class="logbuttons" color="secondary" onClick={() => setShowLogin(true)}>
               Log In
             </button>
           </p>

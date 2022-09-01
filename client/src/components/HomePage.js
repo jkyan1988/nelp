@@ -1,29 +1,18 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import Row from "./Row"
+import RestaurantContainer from "./RestaurantContainer"
+import './HomePage.css'
 
-function HomePage( { restaurants, setRestaurants } ){
-    const image_restaurant = restaurants.filter(restaurant => restaurant.cuisine.includes("Creative"))
 
-    return (
-        <>
-      <div>
-        <Link to="/">Nelp!</Link>
-      </div>
-      <div className="main">
-      <h1>Restaurants Search</h1>
-      <div className="search">
-        <input type="search" placeholder="Restauraunts"></input><input type="search" placeholder="Location"></input><button>Search</button>
-      </div>
-        <div className="App">
-            <Row title="image" restaurants={image_restaurant}/>
-        </div>
-    </div>
- 
 
-    </>
-    )
-    
+function HomePage( { restaurants, renderRestaurant } ) {
+
+return (
+        <div className="restaurant-container">
+            <RestaurantContainer    restaurants={restaurants} 
+                                    renderRestaurant={renderRestaurant}
+            />
+        </div>   
+        ) 
 }
 
 export default HomePage;

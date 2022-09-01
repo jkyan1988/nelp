@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-
-
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -22,16 +20,18 @@ function LoginForm({ onLogin }) {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => alert(err.errors));
       }
     });
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div class="form-popup" id="myForm">
+    <form class="form" onSubmit={handleSubmit}>
       <div>
         <label htmlFor="username">Username</label>
         <input
+        className="form-input"
           type="text"
           id="username"
           autoComplete="off"
@@ -42,6 +42,7 @@ function LoginForm({ onLogin }) {
       <div>
         <label htmlFor="password">Password</label>
         <input
+        className="form-input"
           type="password"
           id="password"
           autoComplete="current-password"
@@ -50,16 +51,13 @@ function LoginForm({ onLogin }) {
         />
       </div>
       <div>
-        <button variant="fill" color="primary" type="submit">
+        <button class="logbuttons" variant="fill" color="primary" type="submit">
           {isLoading ? "Loading..." : "Login"}
         </button>
       </div>
-      {/* <div>
-        {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
-      </div> */}
+      
     </form>
+    </div>
   );
 }
 

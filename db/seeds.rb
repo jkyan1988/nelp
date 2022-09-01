@@ -971,16 +971,17 @@ restaurants = [
         image_url: "https://axwwgrkdco.cloudimg.io/v7/__gmpics__/4cff132fb3e947b49f7a0ce706dbbc20?width=1000"
             }
         ]
-
-restaurants.each do |o| 
-            Restaurant.create(name: o[:name], location: o[:location], cuisine: o[:cuisine], website: o[:website], image_url: o[:image_url])
-    end
-puts "seeding users...."
-10.times do
-    User.create(username: Faker::Name.first_name, image_url: "https://www.webindia123.com/cookery/region/bihar/images/intro.jpg", bio: Faker::Restaurant.description)
-end
-puts "seeding reviews...."
-10.times do
-    Review.create(comment: Faker::Restaurant.review, rating: rand(5), restaurant_id: Restaurant.all.ids.sample, user_id: User.all.ids.sample)
-end
-puts "seeding done!!!!"
+        
+        restaurants.each do |o| 
+            Restaurant.create!(name: o[:name], location: o[:location], cuisine: o[:cuisine], website: o[:website], image_url: o[:image_url])
+        end
+        puts "seeding users...."
+        10.times do 
+            User.create!(username: Faker::Name.first_name, password: "1234", image_url: "https://www.webindia123.com/cookery/region/bihar/images/intro.jpg", bio: Faker::Restaurant.description)
+        end
+        puts "seeding reviews...."
+        1000.times do 
+            Review.create!(comment: Faker::Restaurant.review, rating: rand(5), user_id: User.all.ids.sample, restaurant_id: Restaurant.all.ids.sample)
+        end
+        
+        puts "seeding done!!!!"
