@@ -94,7 +94,7 @@ function RestaurantPage({ select, user }) {
                 <RemoveDefaultButton
                   onClick={() => {
                     handleClick(review.id);
-                  }}
+                  }}       
                 >
                   <HiOutlineTrash className='review-icons'/>
                 </RemoveDefaultButton>
