@@ -32,79 +32,44 @@ code {
 }
 
 
-.search {
-  position:relative;
-    margin:0 auto;
-    clear:left;
-    height:auto;
-    z-index: 0;
-    text-align:center;
-
-}
-
-.logo {
-  margin: 10;
-  width: 200px;
-    height: auto;
-    margin-left: 50px;
-}
-
-.rest-form{
-  width: 500px;
-  height: 50px;
-}
-
-
-.submit{
-  padding: 15px;
-  margin-top: 20px;
-  height: 50px;
-  width: auto;
-}
-
-
 .image{
   height: 375px;
-    width: 250px;
- 
-    display: block;
-  flex-flow: row wrap;
-  justify-content: center;
+    width: 260px;
 }
 
 .restname{
   font-family: helvitica neue;
-  font-size: 30px;
-  color: rgb(209, 40, 209);
-    padding-bottom: 30px;
-    margin-top: 20px;
-    text-align: center;
-    align-items: center;
+  font-size: 25px;
+  color: rgb(206, 62, 62);
 }
-restname2{
+.restname2{
   font-family: helvitica neue;
-  font-size: 10px;
-  color: rgb(209, 40, 209);
-    padding-bottom: 30px;
-    margin-top: 20px;
-    text-align: center;
-    align-items: center;
+  font-size: 15px;
+  color: rgb(206, 62, 62);
+
 }
 .div-rest{
-  background-color: rgb(236, 212, 212);
-    margin-right: 20px;
-    border-radius: 10px;
-    padding: 40px;
-    padding-bottom: 15px;
-    transition: 500ms;
+  background-color: rgb(227, 154, 154);
+    margin-right: 10px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px; 
+    padding: 12px;
     float: left;
-    margin-bottom: 30px;
-    margin-top: 60px;
     text-align:center;
-    align-items: center;
-    
+    align-items: center; 
+    flex-wrap: wrap;
+    transform: scale(.85);
+    position: relative;
+    overflow: hidden;
 }
 
+.div-rest:hover {
+  background: transparent;
+  background-color:rgb(220, 112, 112);
+  transition: all 300ms ease;
+  transform: scale(.95);
+}
 .loginfo{
   text-decoration: none;
   
@@ -162,12 +127,7 @@ restname2{
     margin-top: 10px;
 }
 
-.rest-page{
-  font-family: helvitica neue;
-    text-align: center;
-    display: block;
-    font-weight: bold;
-}
+
 
 .leavereview{
   margin-left: 100px;
@@ -201,3 +161,8 @@ restname2{
 .userimage{
   height: 300px;
 }
+
+::-webkit-scrollbar{
+  display: none;
+}
+

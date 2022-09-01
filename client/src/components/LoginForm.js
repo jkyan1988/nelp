@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Error, FormField } from "../styles";
 
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -21,7 +20,7 @@ function LoginForm({ onLogin }) {
       if (r.ok) {
         r.json().then((user) => onLogin(user));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => alert(err.errors));
       }
     });
   }
@@ -56,11 +55,7 @@ function LoginForm({ onLogin }) {
           {isLoading ? "Loading..." : "Login"}
         </button>
       </div>
-      <FormField>
-        {errors.map((err) => (
-          <Error key={err}>{err}</Error>
-        ))}
-      </FormField>
+      
     </form>
     </div>
   );
