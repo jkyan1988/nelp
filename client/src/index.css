@@ -33,20 +33,22 @@ code {
   padding: 2px 16px;
 }
 
-
+/* CARD NAME ON FRONT PAGE */
 .image{
   height: 375px;
     width: 260px;
 }
 
 .restname{
-  font-family: helvitica neue;
-  font-size: 25px;
+  font-family: 'Michroma';
+  font-size: 16px;
+  font-weight: bold;
   color: rgb(206, 62, 62);
 }
 .restname2{
-  font-family: helvitica neue;
-  font-size: 15px;
+  font-family: 'Michroma';
+  font-size: 10px;
+  font-weight: bold;
   color: rgb(206, 62, 62);
 
 }
@@ -73,9 +75,11 @@ code {
   transform: scale(.95);
 }
 
+/* LOGIN PAGE SIGNUP PAGE */
+
 .loginfo{
   text-decoration: none;
-  color: white;
+  color: antiquewhite;
   font-weight: 500;
   font-size: 14px;
   font-family: helvitica neue;
@@ -108,10 +112,12 @@ code {
   right: 0;
   margin-top: 150px;
   margin-left: 800px;
+  border-color: antiquewhite;
 }
 
 .form-input{
   display: block;
+  background-color: antiquewhite;
 }
 
 .logbuttons{
@@ -141,32 +147,44 @@ code {
   font-size: 40px;
 }
 
+/* USER PROFILE */
+
 .user-profile{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 antiquewhite;
   max-width: 500px;
+  color: antiquewhite;
   margin: auto;
   text-align: center;
-  font-family: helvitica neue;
+  font-family: 'Michroma', sans-serif;
 }
 
 .username{
-  font-family: helvitica neue;
+  font-family: 'Michroma', sans-serif;
   font-weight: bold;
   font-size: 50px;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 .userbio{
-  font-family: helvitica neue;
+  font-family: 'Michroma', sans-serif;
   font-size: 35px;
+  margin-top: 10px;
+  padding: 10px;
 }
 
 .userimage{
   height: 300px;
+  border-radius: 10px;
 }
+
+/*SCROLLBAR NONE */
 
 ::-webkit-scrollbar{
   display: none;
 }
+
+/*BACKGROUND ANIMATION */
 
 html {
   height:100%;
@@ -178,7 +196,7 @@ body {
 
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg,rgb(206, 62, 62) 50%, antiquewhite 50%);
+  background-image: linear-gradient(-60deg,rgb(206, 62, 62) 50%, rgb(227, 154, 154) 50%);
   bottom:0;
   left:-50%;
   opacity:.5;
@@ -204,4 +222,13 @@ body {
   100% {
     transform:translateX(25%);
   }
+}
+
+
+::placeholder{
+  color: rgb(206, 62, 62);
+}
+
+input {
+    color: rgb(206, 62, 62);
 }

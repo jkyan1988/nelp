@@ -21,7 +21,7 @@ function NavBar( { search, handleSearch, user, handleLogoutClick } ) {
             <button class="yelp-submit"><FaYelp type="submit" ></FaYelp></button>
           </form>
         </div>
-        <div class="loginfo-container">WELCOME &nbsp; 
+        <div class="loginfo-container">WELCOME &nbsp; &nbsp; &nbsp; 
             <NavLink exact to="/me" className="welcome-user">
                  {user && user.username}!
             </NavLink>

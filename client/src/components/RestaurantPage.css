@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+
 .rest-page{
     font-family: helvitica neue;
       text-align: center;
@@ -6,6 +9,15 @@
       height: 500px;
       width: auto;
       color: rgb(206, 62, 62);
+      font-size: 20px;
+      font-family: 'Michroma', sans-serif;
+  }
+
+  .restaurant-title {
+    font-size: 45px;
+    font-family: 'Michroma', sans-serif;
+    color: antiquewhite;
+    font-weight: bold;
   }
 
   .rest-image {
@@ -14,5 +26,15 @@
   }
 
   .review-container {
-    width: 70%;
+    justify-content: center;
+    display: flex;
+    color: antiquewhite;
+  }
+
+  .review-title{
+    color: antiquewhite;
+  }
+
+  .review-icons {
+    color:rgb(197, 86, 86);
   }

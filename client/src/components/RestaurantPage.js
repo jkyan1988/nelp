@@ -80,15 +80,15 @@ function RestaurantPage({ select, user }) {
   }
   return (
     <div class="rest-page">
-      <h1><strong>{restaurant.name}</strong></h1>
+      <h1><strong className='restaurant-title'>{restaurant.name}</strong></h1>
       <h2>{restaurant.cuisine}</h2>
       <img className='rest-image' src={restaurant.image_url} />                                                                                                                                                            
-      <h1>Reviews</h1>
+      <h1 className='review-title'>Reviews</h1>
       {restaurant.reviews &&
         restaurant.reviews.map((review) => {
           return (
-            <div>
-            <ul className='review-container'> 
+            <div className='review-container'>
+            <ul> 
               <li>
                 {review.comment}
                 <RemoveDefaultButton
@@ -96,10 +96,10 @@ function RestaurantPage({ select, user }) {
                     handleClick(review.id);
                   }}
                 >
-                  <HiOutlineTrash />
+                  <HiOutlineTrash className='review-icons'/>
                 </RemoveDefaultButton>
                 <RemoveDefaultButton onClick={() => showFormClick(review)}>
-                  <AiFillEdit />
+                  <AiFillEdit className='review-icons'/>
                 </RemoveDefaultButton>
               </li>
             </ul>

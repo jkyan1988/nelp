@@ -86,6 +86,7 @@ function SignUpForm({ onLogin }) {
       <div>
         <label htmlFor="bio">Bio</label>
         <textarea
+        className="form-input"
           rows="3"
           id="bio"
           value={bio}
