@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -70,9 +72,9 @@ code {
   transition: all 300ms ease;
   transform: scale(.95);
 }
+
 .loginfo{
   text-decoration: none;
-  
   color: white;
   font-weight: 500;
   font-size: 14px;
@@ -91,24 +93,21 @@ code {
 .center{
   display: block;
   text-align: center;
-
   padding: 50px;
   width: 190px;
-
   border-radius: 20px;
   border: solid;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 1px;
-  color: rgb(209, 40, 209);
-  background-color: rgb(236, 212, 212);
+  color: antiquewhite;
+  background-color:rgb(206, 62, 62);
   position: relative;
-      top: 50;
-      bottom: 50;
-      
-      right: 0;
-      margin-top: 150px;
-      margin-left: 800px;
+  top: 50;
+  bottom: 50;
+  right: 0;
+  margin-top: 150px;
+  margin-left: 800px;
 }
 
 .form-input{
@@ -119,15 +118,18 @@ code {
   font-family: "Roboto", sans-serif; 
     font-size: 18px;
     font-weight: bold;
-    color: rgb(209, 40, 209);
-    background: rgb(236, 212, 212);
+    color: antiquewhite;
+    background: rgb(206, 62, 62);
     cursor: pointer;
     border-radius: 8px;
-    border-color: rgb(209, 40, 209);
+    border-color: antiquewhite;
     margin-top: 10px;
 }
 
-
+.nelp-login {
+  font-size: 38.5px;
+  font-family: 'Michroma', sans-serif;
+}
 
 .leavereview{
   margin-left: 100px;
@@ -166,3 +168,40 @@ code {
   display: none;
 }
 
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg,rgb(206, 62, 62) 50%, antiquewhite 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}

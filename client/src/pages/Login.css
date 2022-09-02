@@ -1,0 +1,12 @@
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    50% { background-position: 50% 0; }
+    100% { background-position: 0 0; }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    animation: animatedBackground 19s linear running infinite;
+  
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaYelp } from "react-icons/fa"
 
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -29,6 +30,7 @@ function LoginForm({ onLogin }) {
     <div class="form-popup" id="myForm">
     <form class="form" onSubmit={handleSubmit}>
       <div>
+        <label className="nelp-login">NELP<FaYelp/></label><br></br>
         <label htmlFor="username">Username</label>
         <input
         className="form-input"

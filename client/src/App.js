@@ -60,8 +60,9 @@ function App() {
                 search={search}
                 handleSearch={handleSearch}
         />
-      
-       
+          <div class="bg"></div>
+          <div class="bg bg2"></div>
+          <div class="bg bg3"></div>
        <Switch>
           <Route exact path="/">
             <HomePage restaurants={allRestaurants} 
