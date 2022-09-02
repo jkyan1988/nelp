@@ -26,7 +26,7 @@ function Review({ onHandleSubmit, setNewObj, newObj }) {
                           <CommentBox
                             type="text"
                             name="comment"
-                            placeholder="comment"
+                            placeholder="leave a comment"
                             onChange={handleChange}
                           />
                         </label>
