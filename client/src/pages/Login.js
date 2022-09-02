@@ -1,7 +1,7 @@
 import { useState } from "react";
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
-
+import './Login.css'
 
 
 function Login({ onLogin }) {
@@ -9,6 +9,9 @@ function Login({ onLogin }) {
 
   return (
     <div class="center">
+          <div class="bg"></div>
+          <div class="bg bg2"></div>
+          <div class="bg bg3"></div>
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />
