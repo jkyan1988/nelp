@@ -22,7 +22,7 @@ function UpdateReview({ setUpdatedReview, updatedReview, onUpdateForm }) {
           <CommentBox
             type="text"
             name="comment"
-            placeholder="comment"
+            placeholder="update comment"
             onChange={handleChange}
           />
         </label>
