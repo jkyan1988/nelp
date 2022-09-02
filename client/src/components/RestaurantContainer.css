@@ -1,7 +1,10 @@
-.restaurant-container {
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
+
+.restaurant-container {
     grid-template-columns: 100px 50px 100px;
     grid-template-rows: 80px auto 80px; 
     column-gap: 20px;
     row-gap: 15px;
+    font-family: 'Michroma', sans-serif;
 }
