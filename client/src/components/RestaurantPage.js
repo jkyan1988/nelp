@@ -45,6 +45,7 @@ function RestaurantPage({ select, user }) {
         .then((response) => response.json())
         .then(setRestaurant)
     });
+    e.target.reset()
   }
 
   function handleClick(reviewId) {
@@ -77,6 +78,7 @@ function RestaurantPage({ select, user }) {
         .then((response) => response.json())
         .then(setRestaurant);
     });
+    e.target.reset()
   }
   return (
     <div class="rest-page">
